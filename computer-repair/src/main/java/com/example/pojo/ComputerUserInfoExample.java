@@ -492,6 +492,66 @@ public class ComputerUserInfoExample {
             return (Criteria) this;
         }
 
+        public Criteria andComputerUserFaultyStatusIsNull() {
+            addCriterion("computer_user_faulty_status is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserFaultyStatusIsNotNull() {
+            addCriterion("computer_user_faulty_status is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserFaultyStatusEqualTo(Byte value) {
+            addCriterion("computer_user_faulty_status =", value, "computerUserFaultyStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserFaultyStatusNotEqualTo(Byte value) {
+            addCriterion("computer_user_faulty_status <>", value, "computerUserFaultyStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserFaultyStatusGreaterThan(Byte value) {
+            addCriterion("computer_user_faulty_status >", value, "computerUserFaultyStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserFaultyStatusGreaterThanOrEqualTo(Byte value) {
+            addCriterion("computer_user_faulty_status >=", value, "computerUserFaultyStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserFaultyStatusLessThan(Byte value) {
+            addCriterion("computer_user_faulty_status <", value, "computerUserFaultyStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserFaultyStatusLessThanOrEqualTo(Byte value) {
+            addCriterion("computer_user_faulty_status <=", value, "computerUserFaultyStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserFaultyStatusIn(List<Byte> values) {
+            addCriterion("computer_user_faulty_status in", values, "computerUserFaultyStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserFaultyStatusNotIn(List<Byte> values) {
+            addCriterion("computer_user_faulty_status not in", values, "computerUserFaultyStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserFaultyStatusBetween(Byte value1, Byte value2) {
+            addCriterion("computer_user_faulty_status between", value1, value2, "computerUserFaultyStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserFaultyStatusNotBetween(Byte value1, Byte value2) {
+            addCriterion("computer_user_faulty_status not between", value1, value2, "computerUserFaultyStatus");
+            return (Criteria) this;
+        }
+
         public Criteria andCreateTimeIsNull() {
             addCriterion("create_time is null");
             return (Criteria) this;
