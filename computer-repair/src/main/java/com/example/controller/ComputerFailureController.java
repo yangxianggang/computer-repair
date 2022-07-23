@@ -1,11 +1,13 @@
 package com.example.controller;
 
 import com.example.param.ComputerFailureParam;
+import com.example.param.SaveComputerFailureParam;
 import com.example.pojo.ComputerFailureInfo;
 import com.example.pojo.ComputerFailureInfoExample;
 import com.example.service.ComputerFailureService;
 import com.example.util.RdfaData;
 import com.example.util.enums.ExceptionEnums;
+import com.weicoder.common.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,10 +28,36 @@ public class ComputerFailureController {
      */
     @PostMapping("/queryAllPageComputerFailure")
     public RdfaData queryAllPageComputerFailure(@RequestBody ComputerFailureParam param){
-        RdfaData rdfaData=new RdfaData();
-         List<ComputerFailureInfo> failureInfos = computerFailureService.selectByExample(param);
-        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(),failureInfos);
+        RdfaData rdfaData = computerFailureService.queryAllPageComputerFailure(param);
+         return  rdfaData;
+    }
+    /**
+     * 电脑故障登记
+     *  1.记录客户信息
+     *  2.记录故障信息
+     */
+
+    @PostMapping("/saveComputerFailure")
+    public RdfaData saveComputerFailure(@RequestBody SaveComputerFailureParam saveComputerFailureParam){
+        RdfaData rdfaData = computerFailureService.saveComputerFailure(saveComputerFailureParam);
         return  rdfaData;
     }
 
+
+
+
+
+    /**
+     * 电脑故障状态修改
+     */
+
+
+    /**
+     * 电脑故障信息删除
+     */
+
+
+    /**
+     *
+     */
 }

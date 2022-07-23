@@ -1,8 +1,5 @@
 package com.example.util;
 
-import com.example.util.enums.ExceptionEnums;
-import org.apache.poi.ss.formula.functions.T;
-
 public class RdfaData<T> {
     private String code;
     private String message;
@@ -18,7 +15,7 @@ public class RdfaData<T> {
     public void success(String code, String message, T data) {
         this.code = code;
         this.message = message;
-        Data = data;
+        this.Data = data;
     }
 
     public String getCode() {

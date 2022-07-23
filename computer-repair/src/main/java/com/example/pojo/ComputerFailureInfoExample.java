@@ -805,52 +805,52 @@ public class ComputerFailureInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andWarrantyFlagEqualTo(Byte value) {
+        public Criteria andWarrantyFlagEqualTo(Integer value) {
             addCriterion("warranty_flag =", value, "warrantyFlag");
             return (Criteria) this;
         }
 
-        public Criteria andWarrantyFlagNotEqualTo(Byte value) {
+        public Criteria andWarrantyFlagNotEqualTo(Integer value) {
             addCriterion("warranty_flag <>", value, "warrantyFlag");
             return (Criteria) this;
         }
 
-        public Criteria andWarrantyFlagGreaterThan(Byte value) {
+        public Criteria andWarrantyFlagGreaterThan(Integer value) {
             addCriterion("warranty_flag >", value, "warrantyFlag");
             return (Criteria) this;
         }
 
-        public Criteria andWarrantyFlagGreaterThanOrEqualTo(Byte value) {
+        public Criteria andWarrantyFlagGreaterThanOrEqualTo(Integer value) {
             addCriterion("warranty_flag >=", value, "warrantyFlag");
             return (Criteria) this;
         }
 
-        public Criteria andWarrantyFlagLessThan(Byte value) {
+        public Criteria andWarrantyFlagLessThan(Integer value) {
             addCriterion("warranty_flag <", value, "warrantyFlag");
             return (Criteria) this;
         }
 
-        public Criteria andWarrantyFlagLessThanOrEqualTo(Byte value) {
+        public Criteria andWarrantyFlagLessThanOrEqualTo(Integer value) {
             addCriterion("warranty_flag <=", value, "warrantyFlag");
             return (Criteria) this;
         }
 
-        public Criteria andWarrantyFlagIn(List<Byte> values) {
+        public Criteria andWarrantyFlagIn(List<Integer> values) {
             addCriterion("warranty_flag in", values, "warrantyFlag");
             return (Criteria) this;
         }
 
-        public Criteria andWarrantyFlagNotIn(List<Byte> values) {
+        public Criteria andWarrantyFlagNotIn(List<Integer> values) {
             addCriterion("warranty_flag not in", values, "warrantyFlag");
             return (Criteria) this;
         }
 
-        public Criteria andWarrantyFlagBetween(Byte value1, Byte value2) {
+        public Criteria andWarrantyFlagBetween(Integer value1, Integer value2) {
             addCriterion("warranty_flag between", value1, value2, "warrantyFlag");
             return (Criteria) this;
         }
 
-        public Criteria andWarrantyFlagNotBetween(Byte value1, Byte value2) {
+        public Criteria andWarrantyFlagNotBetween(Integer value1, Integer value2) {
             addCriterion("warranty_flag not between", value1, value2, "warrantyFlag");
             return (Criteria) this;
         }
@@ -865,52 +865,52 @@ public class ComputerFailureInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andFailureStatusEqualTo(Byte value) {
+        public Criteria andFailureStatusEqualTo(Integer value) {
             addCriterion("failure_status =", value, "failureStatus");
             return (Criteria) this;
         }
 
-        public Criteria andFailureStatusNotEqualTo(Byte value) {
+        public Criteria andFailureStatusNotEqualTo(Integer value) {
             addCriterion("failure_status <>", value, "failureStatus");
             return (Criteria) this;
         }
 
-        public Criteria andFailureStatusGreaterThan(Byte value) {
+        public Criteria andFailureStatusGreaterThan(Integer value) {
             addCriterion("failure_status >", value, "failureStatus");
             return (Criteria) this;
         }
 
-        public Criteria andFailureStatusGreaterThanOrEqualTo(Byte value) {
+        public Criteria andFailureStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("failure_status >=", value, "failureStatus");
             return (Criteria) this;
         }
 
-        public Criteria andFailureStatusLessThan(Byte value) {
+        public Criteria andFailureStatusLessThan(Integer value) {
             addCriterion("failure_status <", value, "failureStatus");
             return (Criteria) this;
         }
 
-        public Criteria andFailureStatusLessThanOrEqualTo(Byte value) {
+        public Criteria andFailureStatusLessThanOrEqualTo(Integer value) {
             addCriterion("failure_status <=", value, "failureStatus");
             return (Criteria) this;
         }
 
-        public Criteria andFailureStatusIn(List<Byte> values) {
+        public Criteria andFailureStatusIn(List<Integer> values) {
             addCriterion("failure_status in", values, "failureStatus");
             return (Criteria) this;
         }
 
-        public Criteria andFailureStatusNotIn(List<Byte> values) {
+        public Criteria andFailureStatusNotIn(List<Integer> values) {
             addCriterion("failure_status not in", values, "failureStatus");
             return (Criteria) this;
         }
 
-        public Criteria andFailureStatusBetween(Byte value1, Byte value2) {
+        public Criteria andFailureStatusBetween(Integer value1, Integer value2) {
             addCriterion("failure_status between", value1, value2, "failureStatus");
             return (Criteria) this;
         }
 
-        public Criteria andFailureStatusNotBetween(Byte value1, Byte value2) {
+        public Criteria andFailureStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("failure_status not between", value1, value2, "failureStatus");
             return (Criteria) this;
         }
@@ -925,52 +925,52 @@ public class ComputerFailureInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andMaintenanceStatusEqualTo(Byte value) {
+        public Criteria andMaintenanceStatusEqualTo(Integer value) {
             addCriterion("maintenance_status =", value, "maintenanceStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMaintenanceStatusNotEqualTo(Byte value) {
+        public Criteria andMaintenanceStatusNotEqualTo(Integer value) {
             addCriterion("maintenance_status <>", value, "maintenanceStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMaintenanceStatusGreaterThan(Byte value) {
+        public Criteria andMaintenanceStatusGreaterThan(Integer value) {
             addCriterion("maintenance_status >", value, "maintenanceStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMaintenanceStatusGreaterThanOrEqualTo(Byte value) {
+        public Criteria andMaintenanceStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("maintenance_status >=", value, "maintenanceStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMaintenanceStatusLessThan(Byte value) {
+        public Criteria andMaintenanceStatusLessThan(Integer value) {
             addCriterion("maintenance_status <", value, "maintenanceStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMaintenanceStatusLessThanOrEqualTo(Byte value) {
+        public Criteria andMaintenanceStatusLessThanOrEqualTo(Integer value) {
             addCriterion("maintenance_status <=", value, "maintenanceStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMaintenanceStatusIn(List<Byte> values) {
+        public Criteria andMaintenanceStatusIn(List<Integer> values) {
             addCriterion("maintenance_status in", values, "maintenanceStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMaintenanceStatusNotIn(List<Byte> values) {
+        public Criteria andMaintenanceStatusNotIn(List<Integer> values) {
             addCriterion("maintenance_status not in", values, "maintenanceStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMaintenanceStatusBetween(Byte value1, Byte value2) {
+        public Criteria andMaintenanceStatusBetween(Integer value1, Integer value2) {
             addCriterion("maintenance_status between", value1, value2, "maintenanceStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMaintenanceStatusNotBetween(Byte value1, Byte value2) {
+        public Criteria andMaintenanceStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("maintenance_status not between", value1, value2, "maintenanceStatus");
             return (Criteria) this;
         }
@@ -1425,52 +1425,52 @@ public class ComputerFailureInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagEqualTo(Byte value) {
+        public Criteria andDeleteFlagEqualTo(Integer value) {
             addCriterion("delete_flag =", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagNotEqualTo(Byte value) {
+        public Criteria andDeleteFlagNotEqualTo(Integer value) {
             addCriterion("delete_flag <>", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagGreaterThan(Byte value) {
+        public Criteria andDeleteFlagGreaterThan(Integer value) {
             addCriterion("delete_flag >", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagGreaterThanOrEqualTo(Byte value) {
+        public Criteria andDeleteFlagGreaterThanOrEqualTo(Integer value) {
             addCriterion("delete_flag >=", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagLessThan(Byte value) {
+        public Criteria andDeleteFlagLessThan(Integer value) {
             addCriterion("delete_flag <", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagLessThanOrEqualTo(Byte value) {
+        public Criteria andDeleteFlagLessThanOrEqualTo(Integer value) {
             addCriterion("delete_flag <=", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagIn(List<Byte> values) {
+        public Criteria andDeleteFlagIn(List<Integer> values) {
             addCriterion("delete_flag in", values, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagNotIn(List<Byte> values) {
+        public Criteria andDeleteFlagNotIn(List<Integer> values) {
             addCriterion("delete_flag not in", values, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagBetween(Byte value1, Byte value2) {
+        public Criteria andDeleteFlagBetween(Integer value1, Integer value2) {
             addCriterion("delete_flag between", value1, value2, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagNotBetween(Byte value1, Byte value2) {
+        public Criteria andDeleteFlagNotBetween(Integer value1, Integer value2) {
             addCriterion("delete_flag not between", value1, value2, "deleteFlag");
             return (Criteria) this;
         }

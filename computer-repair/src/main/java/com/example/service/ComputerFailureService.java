@@ -1,10 +1,12 @@
 package com.example.service;
 
 import com.example.param.ComputerFailureParam;
+import com.example.param.SaveComputerFailureParam;
 import com.example.pojo.ComputerFailureInfo;
 import com.example.pojo.ComputerFailureInfoExample;
 import com.example.pojo.StoreEmployeesInfo;
 import com.example.pojo.StoreEmployeesInfoExample;
+import com.example.util.RdfaData;
 
 import java.util.List;
 
@@ -26,12 +28,17 @@ public interface ComputerFailureService {
      */
 
 
+    RdfaData saveComputerFailure( SaveComputerFailureParam saveComputerFailureParam);
+
+
+
+
 
     /**
      * 电脑故障列表
      */
 
-    List<ComputerFailureInfo> selectByExample(ComputerFailureParam param);
+    RdfaData  queryAllPageComputerFailure(ComputerFailureParam param);
 
 
     /**

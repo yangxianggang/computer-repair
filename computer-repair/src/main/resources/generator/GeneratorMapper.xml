@@ -22,13 +22,11 @@
                         password="admin">
         </jdbcConnection>
         <!-- 类型转换 -->
-        <javaTypeResolver >
-            <!-- 是否使用bigDecimal,
-                false: 把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer(默认)
-                true:  把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal
-            -->
-            <property name="forceBigDecimals" value="false" />
-        </javaTypeResolver>
+<!--        <javaTypeResolver type="com.example.util.TinyIntJavaTypeResolver.java">-->
+<!--            <property name="forceBigDecimals" value="false"/>-->
+<!--        </javaTypeResolver>-->
+
+
         <!-- 生成模型的包名和位置-->
         <javaModelGenerator targetPackage="com.example.pojo" targetProject="src/main/java">
             <!-- 默认false 是否允许子包 -->
@@ -51,6 +49,13 @@
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
         <!-- <table tableName="risk_model_order" domainObjectName="DSRiskModelOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
          <table tableName="tel_bill_record" domainObjectName="DSTelBillRecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
-        <table tableName="%info"></table>
+        <table tableName="%info">
+            <columnOverride column="warranty_flag" property="warrantyFlag" javaType="java.lang.Integer" />
+            <columnOverride column="failure_status" property="failureStatus" javaType="java.lang.Integer" />
+            <columnOverride column="maintenance_status" property="maintenanceStatus" javaType="java.lang.Integer" />
+            <columnOverride column="computer_user_faulty_status" property="computerUserFaultyStatus" javaType="java.lang.Integer" />
+            <columnOverride column="delete_flag" property="deleteFlag" javaType="java.lang.Integer" />
+
+        </table>
     </context>
 </generatorConfiguration>

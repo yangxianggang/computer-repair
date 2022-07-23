@@ -502,52 +502,52 @@ public class ComputerUserInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andComputerUserFaultyStatusEqualTo(Byte value) {
+        public Criteria andComputerUserFaultyStatusEqualTo(Integer value) {
             addCriterion("computer_user_faulty_status =", value, "computerUserFaultyStatus");
             return (Criteria) this;
         }
 
-        public Criteria andComputerUserFaultyStatusNotEqualTo(Byte value) {
+        public Criteria andComputerUserFaultyStatusNotEqualTo(Integer value) {
             addCriterion("computer_user_faulty_status <>", value, "computerUserFaultyStatus");
             return (Criteria) this;
         }
 
-        public Criteria andComputerUserFaultyStatusGreaterThan(Byte value) {
+        public Criteria andComputerUserFaultyStatusGreaterThan(Integer value) {
             addCriterion("computer_user_faulty_status >", value, "computerUserFaultyStatus");
             return (Criteria) this;
         }
 
-        public Criteria andComputerUserFaultyStatusGreaterThanOrEqualTo(Byte value) {
+        public Criteria andComputerUserFaultyStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("computer_user_faulty_status >=", value, "computerUserFaultyStatus");
             return (Criteria) this;
         }
 
-        public Criteria andComputerUserFaultyStatusLessThan(Byte value) {
+        public Criteria andComputerUserFaultyStatusLessThan(Integer value) {
             addCriterion("computer_user_faulty_status <", value, "computerUserFaultyStatus");
             return (Criteria) this;
         }
 
-        public Criteria andComputerUserFaultyStatusLessThanOrEqualTo(Byte value) {
+        public Criteria andComputerUserFaultyStatusLessThanOrEqualTo(Integer value) {
             addCriterion("computer_user_faulty_status <=", value, "computerUserFaultyStatus");
             return (Criteria) this;
         }
 
-        public Criteria andComputerUserFaultyStatusIn(List<Byte> values) {
+        public Criteria andComputerUserFaultyStatusIn(List<Integer> values) {
             addCriterion("computer_user_faulty_status in", values, "computerUserFaultyStatus");
             return (Criteria) this;
         }
 
-        public Criteria andComputerUserFaultyStatusNotIn(List<Byte> values) {
+        public Criteria andComputerUserFaultyStatusNotIn(List<Integer> values) {
             addCriterion("computer_user_faulty_status not in", values, "computerUserFaultyStatus");
             return (Criteria) this;
         }
 
-        public Criteria andComputerUserFaultyStatusBetween(Byte value1, Byte value2) {
+        public Criteria andComputerUserFaultyStatusBetween(Integer value1, Integer value2) {
             addCriterion("computer_user_faulty_status between", value1, value2, "computerUserFaultyStatus");
             return (Criteria) this;
         }
 
-        public Criteria andComputerUserFaultyStatusNotBetween(Byte value1, Byte value2) {
+        public Criteria andComputerUserFaultyStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("computer_user_faulty_status not between", value1, value2, "computerUserFaultyStatus");
             return (Criteria) this;
         }
@@ -802,52 +802,52 @@ public class ComputerUserInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagEqualTo(Byte value) {
+        public Criteria andDeleteFlagEqualTo(Integer value) {
             addCriterion("delete_flag =", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagNotEqualTo(Byte value) {
+        public Criteria andDeleteFlagNotEqualTo(Integer value) {
             addCriterion("delete_flag <>", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagGreaterThan(Byte value) {
+        public Criteria andDeleteFlagGreaterThan(Integer value) {
             addCriterion("delete_flag >", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagGreaterThanOrEqualTo(Byte value) {
+        public Criteria andDeleteFlagGreaterThanOrEqualTo(Integer value) {
             addCriterion("delete_flag >=", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagLessThan(Byte value) {
+        public Criteria andDeleteFlagLessThan(Integer value) {
             addCriterion("delete_flag <", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagLessThanOrEqualTo(Byte value) {
+        public Criteria andDeleteFlagLessThanOrEqualTo(Integer value) {
             addCriterion("delete_flag <=", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagIn(List<Byte> values) {
+        public Criteria andDeleteFlagIn(List<Integer> values) {
             addCriterion("delete_flag in", values, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagNotIn(List<Byte> values) {
+        public Criteria andDeleteFlagNotIn(List<Integer> values) {
             addCriterion("delete_flag not in", values, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagBetween(Byte value1, Byte value2) {
+        public Criteria andDeleteFlagBetween(Integer value1, Integer value2) {
             addCriterion("delete_flag between", value1, value2, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteFlagNotBetween(Byte value1, Byte value2) {
+        public Criteria andDeleteFlagNotBetween(Integer value1, Integer value2) {
             addCriterion("delete_flag not between", value1, value2, "deleteFlag");
             return (Criteria) this;
         }

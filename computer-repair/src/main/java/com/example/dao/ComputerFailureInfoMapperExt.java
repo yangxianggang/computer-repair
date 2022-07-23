@@ -13,6 +13,6 @@ public interface ComputerFailureInfoMapperExt {
      * @param param
      * @return
      */
-    List<ComputerFailureInfo> selectByExample(ComputerFailureParam param);
+    List<ComputerFailureInfo> queryAllPageComputerFailure(ComputerFailureParam param);
 
 }
