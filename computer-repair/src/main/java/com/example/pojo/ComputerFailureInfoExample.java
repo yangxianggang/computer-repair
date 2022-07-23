@@ -315,6 +315,76 @@ public class ComputerFailureInfoExample {
             return (Criteria) this;
         }
 
+        public Criteria andComputerUserNameIsNull() {
+            addCriterion("computer_user_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameIsNotNull() {
+            addCriterion("computer_user_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameEqualTo(String value) {
+            addCriterion("computer_user_name =", value, "computerUserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameNotEqualTo(String value) {
+            addCriterion("computer_user_name <>", value, "computerUserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameGreaterThan(String value) {
+            addCriterion("computer_user_name >", value, "computerUserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameGreaterThanOrEqualTo(String value) {
+            addCriterion("computer_user_name >=", value, "computerUserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameLessThan(String value) {
+            addCriterion("computer_user_name <", value, "computerUserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameLessThanOrEqualTo(String value) {
+            addCriterion("computer_user_name <=", value, "computerUserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameLike(String value) {
+            addCriterion("computer_user_name like", value, "computerUserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameNotLike(String value) {
+            addCriterion("computer_user_name not like", value, "computerUserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameIn(List<String> values) {
+            addCriterion("computer_user_name in", values, "computerUserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameNotIn(List<String> values) {
+            addCriterion("computer_user_name not in", values, "computerUserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameBetween(String value1, String value2) {
+            addCriterion("computer_user_name between", value1, value2, "computerUserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andComputerUserNameNotBetween(String value1, String value2) {
+            addCriterion("computer_user_name not between", value1, value2, "computerUserName");
+            return (Criteria) this;
+        }
+
         public Criteria andStoreIdIsNull() {
             addCriterion("store_id is null");
             return (Criteria) this;

@@ -5,16 +5,23 @@ spring:
     url: jdbc:mysql://localhost:3306/computer_maintenance?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
     username: root
     password: admin
-#mybatis???
+
+#SpringBoot整合Mybatis配置
 mybatis:
+  #指定UserMapper.xml文件的位置
+  mapper-locations: classpath:mapper/*.xml
+ # mapper-locations: classpath:mapper/*.xml
+
+  type-aliases-package: com.example.pojo
+  #开启驼峰映射
   configuration:
-    #   sql?????????????
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    #  ????????? ?  user_name ?????? _??????????????????
     map-underscore-to-camel-case: true
-  #  ??mapper?????
-  mapper-locations: classpath:src/main/resources/mapper/*.xml
-  #pageHelper??????????
+# 开启MyBatis打印日志
+logging:
+  level:
+    com.xdx.mapper: debug
+
+
 pagehelper:
   helperDialect: mysql
   reasonable: true

@@ -94,13 +94,14 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+            <!--逆向工程的plugin-->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.2</version>
                 <configuration>
                     <!--配置文件的位置-->
-                    <configurationFile>src/main/resources/mapper/GeneratorMapper.xml</configurationFile>
+                    <configurationFile>src/main/resources/generator/GeneratorMapper.xml</configurationFile>
                     <verbose>true</verbose>
                     <overwrite>true</overwrite>
 
@@ -108,25 +109,35 @@
 
             </plugin>
         </plugins>
+<!--        <resources>-->
+<!--            <resource>-->
+<!--                <directory>src/main/java</directory>-->
+<!--                <excludes>-->
+<!--                    <exclude>**/*.java</exclude>-->
+<!--                </excludes>-->
+<!--            </resource>-->
+<!--            <resource>-->
+<!--                <directory>src/main/resources</directory>-->
+<!--                <includes>-->
+<!--                    <include>**/*.*</include>-->
+<!--                </includes>-->
+<!--            </resource>-->
+<!--        </resources>-->
+
         <resources>
             <resource>
                 <directory>src/main/java</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
                 <includes>
-                    <include>**/*.*</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
                 </includes>
+                <filtering>false</filtering>
             </resource>
         </resources>
 
 
-
-
     </build>
+
 
 
 

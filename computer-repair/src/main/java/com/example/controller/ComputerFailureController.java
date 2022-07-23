@@ -1,11 +1,12 @@
 package com.example.controller;
 
+import com.example.param.ComputerFailureParam;
 import com.example.pojo.ComputerFailureInfo;
 import com.example.pojo.ComputerFailureInfoExample;
 import com.example.service.ComputerFailureService;
-import com.weicoder.common.U;
+import com.example.util.RdfaData;
+import com.example.util.enums.ExceptionEnums;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,10 +19,17 @@ public class ComputerFailureController {
     private ComputerFailureService computerFailureService;
 
 
-    @GetMapping("/queryAllPageComputerFailure")
-    public List<ComputerFailureInfo> selectByExample(){
-        ComputerFailureInfoExample example=new ComputerFailureInfoExample();
-        return  computerFailureService.selectByExample(example);
+
+    /**
+     * 电脑故障列表
+     * @return
+     */
+    @PostMapping("/queryAllPageComputerFailure")
+    public RdfaData queryAllPageComputerFailure(@RequestBody ComputerFailureParam param){
+        RdfaData rdfaData=new RdfaData();
+         List<ComputerFailureInfo> failureInfos = computerFailureService.selectByExample(param);
+        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(),failureInfos);
+        return  rdfaData;
     }
 
 }

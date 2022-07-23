@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.param.ComputerFailureParam;
 import com.example.pojo.ComputerFailureInfo;
 import com.example.pojo.ComputerFailureInfoExample;
 import com.example.pojo.StoreEmployeesInfo;
@@ -24,11 +25,13 @@ public interface ComputerFailureService {
      *  2.记录故障信息
      */
 
+
+
     /**
      * 电脑故障列表
      */
 
-    List<ComputerFailureInfo> selectByExample(ComputerFailureInfoExample example);
+    List<ComputerFailureInfo> selectByExample(ComputerFailureParam param);
 
 
     /**
