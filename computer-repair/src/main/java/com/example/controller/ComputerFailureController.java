@@ -3,16 +3,11 @@ package com.example.controller;
 import com.example.param.ComputerFailureParam;
 import com.example.param.SaveComputerFailureParam;
 import com.example.param.UpdateComputerFailureInfoParam;
-import com.example.pojo.ComputerFailureInfo;
-import com.example.pojo.ComputerFailureInfoExample;
-import com.example.service.ComputerFailureService;
+ import com.example.service.ComputerFailureService;
 import com.example.util.RdfaData;
-import com.example.util.enums.ExceptionEnums;
-import com.weicoder.common.C;
-import org.springframework.beans.factory.annotation.Autowired;
+  import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/computerFailure")
