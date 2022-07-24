@@ -45,12 +45,7 @@ public class ComputerFailureServiceImpl  implements ComputerFailureService {
         RdfaData rdfaData=new RdfaData();
         //保存客户信息
         // TODO: 2022-7-23  pom 文件
-        //ComputerUserInfo userInfo = ComputerConvert.INSTANCE.computerUserInfoParamToInfoVo(saveComputerFailureParam);
-        ComputerUserInfo userInfo=new ComputerUserInfo();
-        userInfo.setComputerUserName(saveComputerFailureParam.getComputerUserName());
-        userInfo.setComputerUserContact(saveComputerFailureParam.getComputerUserContact());
-        userInfo.setComputerUserAddress(saveComputerFailureParam.getComputerUserAddress());
-        userInfo.setComputerUserFaultyStatus(saveComputerFailureParam.getComputerUserFaultyStatus());
+        ComputerUserInfo userInfo = ComputerConvert.INSTANCE.computerUserInfoParamToInfoVo(saveComputerFailureParam);
         userInfo.setComputerUserId(GetSnowIdUtil.getId());
         userInfo.setCreateTime(new Date());
         userInfo.setUpdateTime(new Date());
@@ -58,16 +53,7 @@ public class ComputerFailureServiceImpl  implements ComputerFailureService {
         computerUserInfoMapper.insertSelective(userInfo);
         //保存电脑故障信息
         // TODO: 2022-7-23 类转换异常
-        //ComputerFailureInfo failureInfo = ComputerConvert.INSTANCE.computerFailureParamToInfoVo(saveComputerFailureParam);
-        ComputerFailureInfo failureInfo=new ComputerFailureInfo();
-        failureInfo.setBrandModels(saveComputerFailureParam.getBrandModels());
-        failureInfo.setServeSerial(saveComputerFailureParam.getServeSerial());
-        failureInfo.setQuickServiceCode(saveComputerFailureParam.getQuickServiceCode());
-        failureInfo.setFailureInformation(saveComputerFailureParam.getFailureInformation());
-        failureInfo.setFailureInformationDetailed(saveComputerFailureParam.getFailureInformationDetailed());
-        failureInfo.setWarrantyFlag(saveComputerFailureParam.getWarrantyFlag());
-        failureInfo.setFailureStatus(saveComputerFailureParam.getFailureStatus());
-        failureInfo.setMaintenanceStatus(saveComputerFailureParam.getMaintenanceStatus());
+        ComputerFailureInfo failureInfo = ComputerConvert.INSTANCE.computerFailureParamToInfoVo(saveComputerFailureParam);
         failureInfo.setComputerFailureId(GetSnowIdUtil.getId());//业务主键
         failureInfo.setComputerUserId(userInfo.getComputerUserId());//电脑用户id
         failureInfo.setComputerUserName(userInfo.getComputerUserName());//用户姓名

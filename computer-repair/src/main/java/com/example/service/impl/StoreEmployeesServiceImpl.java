@@ -13,9 +13,9 @@ import com.example.pojo.StoreInfo;
 import com.example.service.StoreEmployeesService;
 import com.example.util.GetSnowIdUtil;
 import com.example.util.RdfaData;
+import com.example.util.convert.StoreEmployeesConvert;
 import com.example.util.enums.DeleteFlagEnums;
 import com.example.util.enums.ExceptionEnums;
-import com.weicoder.common.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,9 +41,9 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
      */
     @Override
     public RdfaData queryAllPageStoreInfo(StoreInfoParam param) {
-        RdfaData rdfaData=new RdfaData();
+        RdfaData rdfaData = new RdfaData();
         List<StoreInfo> storeInfos = storeInfoMapperExt.queryAllPageStoreInfo(param);
-        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(),storeInfos);
+        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(), storeInfos);
         return rdfaData;
     }
 
@@ -53,13 +53,8 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
 
     @Override
     public RdfaData saveStoreInfo(StoreInfoParam param) {
-        StoreInfo storeInfo=new StoreInfo();
+        StoreInfo storeInfo = StoreEmployeesConvert.INSTANCE.storeInfoParamConvert(param);
         storeInfo.setStoreId(GetSnowIdUtil.getId());
-        storeInfo.setStoreLandline(param.getStoreLandline());
-        storeInfo.setStoreAddress(param.getStoreAddress());
-        storeInfo.setStoreHead(param.getStoreHead());
-        storeInfo.setStoreHeadContact(param.getStoreHeadContact());
-        storeInfo.setAttributionProvinces(param.getAttributionProvinces());
         storeInfo.setCreateTime(new Date());
         storeInfo.setUpdateTime(new Date());
         storeInfo.setDeleteFlag(DeleteFlagEnums.未删除.getCode());
@@ -77,7 +72,6 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
     @Override
     public RdfaData updateStoreInfoDeleteFlag(UpdateStoreInfoParam param) {
         Integer integer = storeInfoMapperExt.updateStoreInfoDeleteFlag(param);
-
         return publicRdfaDate(integer);
     }
 
@@ -89,14 +83,8 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
      */
     @Override
     public RdfaData updateStoreInfo(StoreInfoParam param) {
-
-        StoreInfo storeInfo=new StoreInfo();
+        StoreInfo storeInfo = StoreEmployeesConvert.INSTANCE.storeInfoParamConvert(param);
         storeInfo.setStoreId(GetSnowIdUtil.getId());
-        storeInfo.setStoreLandline(param.getStoreLandline());
-        storeInfo.setStoreAddress(param.getStoreAddress());
-        storeInfo.setStoreHead(param.getStoreHead());
-        storeInfo.setStoreHeadContact(param.getStoreHeadContact());
-        storeInfo.setAttributionProvinces(param.getAttributionProvinces());
         storeInfo.setUpdateTime(new Date());
         Integer integer = storeInfoMapperExt.updateByExampleSelective(storeInfo);
         return publicRdfaDate(integer);
@@ -108,17 +96,13 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
 
     @Override
     public RdfaData saveStoreEmployeesInfo(StoreEmployeesInfoParam param) {
-        StoreEmployeesInfo  storeEmployeesInfo=new StoreEmployeesInfo();
+        StoreEmployeesInfo storeEmployeesInfo = StoreEmployeesConvert.INSTANCE.storeEmployeesInfoConvert(param);
         storeEmployeesInfo.setStoreEmployeesId(GetSnowIdUtil.getId());
-        storeEmployeesInfo.setStoreEmployeesName(param.getStoreEmployeesName());
-        storeEmployeesInfo.setStoreEmployeesContact(param.getStoreEmployeesContact());
-        storeEmployeesInfo.setStoreEmployeesAddress(param.getStoreEmployeesAddress());
-        storeEmployeesInfo.setStoreEmployeesPosition(param.getStoreEmployeesPosition());
         storeEmployeesInfo.setCreateTime(new Date());
         storeEmployeesInfo.setUpdateTime(new Date());
         storeEmployeesInfo.setDeleteFlag(DeleteFlagEnums.未删除.getCode());
         int i = storeEmployeesInfoMapper.insertSelective(storeEmployeesInfo);
-        return  publicRdfaDate(i);
+        return publicRdfaDate(i);
     }
 
     /**
@@ -127,9 +111,9 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
 
     @Override
     public RdfaData queryAllStoreEmployeesInfo(StoreEmployeesInfoParam param) {
-        RdfaData rdfaData=new RdfaData();
+        RdfaData rdfaData = new RdfaData();
         List<StoreEmployeesInfo> storeEmployeesInfos = storeEmployeesInfoMapperExt.queryAllStoreEmployeesInfo(param);
-        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(),storeEmployeesInfos);
+        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(), storeEmployeesInfos);
         return rdfaData;
     }
 
@@ -138,14 +122,10 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
      */
     @Override
     public RdfaData updateStoreEmployeesInfo(StoreEmployeesInfoParam param) {
-        StoreEmployeesInfo  storeEmployeesInfo=new StoreEmployeesInfo();
+        StoreEmployeesInfo storeEmployeesInfo = StoreEmployeesConvert.INSTANCE.storeEmployeesInfoConvert(param);
         storeEmployeesInfo.setStoreEmployeesId(GetSnowIdUtil.getId());
-        storeEmployeesInfo.setStoreEmployeesName(param.getStoreEmployeesName());
-        storeEmployeesInfo.setStoreEmployeesContact(param.getStoreEmployeesContact());
-        storeEmployeesInfo.setStoreEmployeesAddress(param.getStoreEmployeesAddress());
-        storeEmployeesInfo.setStoreEmployeesPosition(param.getStoreEmployeesPosition());
-         storeEmployeesInfo.setUpdateTime(new Date());
-         int updateByPrimaryKey = storeEmployeesInfoMapper.updateByPrimaryKey(storeEmployeesInfo);
+        storeEmployeesInfo.setUpdateTime(new Date());
+        int updateByPrimaryKey = storeEmployeesInfoMapper.updateByPrimaryKey(storeEmployeesInfo);
         return publicRdfaDate(updateByPrimaryKey);
     }
 
@@ -162,13 +142,13 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
     }
 
 
-    public RdfaData publicRdfaDate(Integer integer){
-        RdfaData rdfaData=new RdfaData();
-        if (integer>0){
+    public RdfaData publicRdfaDate(Integer integer) {
+        RdfaData rdfaData = new RdfaData();
+        if (integer > 0) {
             rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue());
-        }else {
-            rdfaData.failed(ExceptionEnums.无更新.getKey(),ExceptionEnums.无更新.getValue());
+        } else {
+            rdfaData.failed(ExceptionEnums.无更新.getKey(), ExceptionEnums.无更新.getValue());
         }
-        return  rdfaData;
+        return rdfaData;
     }
 }
