@@ -475,52 +475,52 @@ public class StoreEmployeesInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andStoreEmployeesPositionEqualTo(Byte value) {
+        public Criteria andStoreEmployeesPositionEqualTo(Integer value) {
             addCriterion("store_employees_position =", value, "storeEmployeesPosition");
             return (Criteria) this;
         }
 
-        public Criteria andStoreEmployeesPositionNotEqualTo(Byte value) {
+        public Criteria andStoreEmployeesPositionNotEqualTo(Integer value) {
             addCriterion("store_employees_position <>", value, "storeEmployeesPosition");
             return (Criteria) this;
         }
 
-        public Criteria andStoreEmployeesPositionGreaterThan(Byte value) {
+        public Criteria andStoreEmployeesPositionGreaterThan(Integer value) {
             addCriterion("store_employees_position >", value, "storeEmployeesPosition");
             return (Criteria) this;
         }
 
-        public Criteria andStoreEmployeesPositionGreaterThanOrEqualTo(Byte value) {
+        public Criteria andStoreEmployeesPositionGreaterThanOrEqualTo(Integer value) {
             addCriterion("store_employees_position >=", value, "storeEmployeesPosition");
             return (Criteria) this;
         }
 
-        public Criteria andStoreEmployeesPositionLessThan(Byte value) {
+        public Criteria andStoreEmployeesPositionLessThan(Integer value) {
             addCriterion("store_employees_position <", value, "storeEmployeesPosition");
             return (Criteria) this;
         }
 
-        public Criteria andStoreEmployeesPositionLessThanOrEqualTo(Byte value) {
+        public Criteria andStoreEmployeesPositionLessThanOrEqualTo(Integer value) {
             addCriterion("store_employees_position <=", value, "storeEmployeesPosition");
             return (Criteria) this;
         }
 
-        public Criteria andStoreEmployeesPositionIn(List<Byte> values) {
+        public Criteria andStoreEmployeesPositionIn(List<Integer> values) {
             addCriterion("store_employees_position in", values, "storeEmployeesPosition");
             return (Criteria) this;
         }
 
-        public Criteria andStoreEmployeesPositionNotIn(List<Byte> values) {
+        public Criteria andStoreEmployeesPositionNotIn(List<Integer> values) {
             addCriterion("store_employees_position not in", values, "storeEmployeesPosition");
             return (Criteria) this;
         }
 
-        public Criteria andStoreEmployeesPositionBetween(Byte value1, Byte value2) {
+        public Criteria andStoreEmployeesPositionBetween(Integer value1, Integer value2) {
             addCriterion("store_employees_position between", value1, value2, "storeEmployeesPosition");
             return (Criteria) this;
         }
 
-        public Criteria andStoreEmployeesPositionNotBetween(Byte value1, Byte value2) {
+        public Criteria andStoreEmployeesPositionNotBetween(Integer value1, Integer value2) {
             addCriterion("store_employees_position not between", value1, value2, "storeEmployeesPosition");
             return (Criteria) this;
         }

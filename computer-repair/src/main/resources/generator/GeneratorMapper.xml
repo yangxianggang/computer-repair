@@ -55,6 +55,7 @@
             <columnOverride column="maintenance_status" property="maintenanceStatus" javaType="java.lang.Integer" />
             <columnOverride column="computer_user_faulty_status" property="computerUserFaultyStatus" javaType="java.lang.Integer" />
             <columnOverride column="delete_flag" property="deleteFlag" javaType="java.lang.Integer" />
+            <columnOverride column="store_employees_position" property="storeEmployeesPosition" javaType="java.lang.Integer" />
 
         </table>
     </context>
