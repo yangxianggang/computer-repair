@@ -71,6 +71,7 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
      */
     @Override
     public RdfaData updateStoreInfoDeleteFlag(UpdateStoreInfoParam param) {
+        param.setDeleteFlag(DeleteFlagEnums.已删除.getCode());
         Integer integer = storeInfoMapperExt.updateStoreInfoDeleteFlag(param);
         return publicRdfaDate(integer);
     }
@@ -83,9 +84,10 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
      */
     @Override
     public RdfaData updateStoreInfo(StoreInfoParam param) {
+        // TODO: 2022-7-24 主键转换没有转换过来 
         StoreInfo storeInfo = StoreEmployeesConvert.INSTANCE.storeInfoParamConvert(param);
-        storeInfo.setStoreId(GetSnowIdUtil.getId());
-        storeInfo.setUpdateTime(new Date());
+        storeInfo.setStoreId(param.getStoreId());
+         storeInfo.setUpdateTime(new Date());
         Integer integer = storeInfoMapperExt.updateByExampleSelective(storeInfo);
         return publicRdfaDate(integer);
     }
@@ -123,9 +125,9 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
     @Override
     public RdfaData updateStoreEmployeesInfo(StoreEmployeesInfoParam param) {
         StoreEmployeesInfo storeEmployeesInfo = StoreEmployeesConvert.INSTANCE.storeEmployeesInfoConvert(param);
-        storeEmployeesInfo.setStoreEmployeesId(GetSnowIdUtil.getId());
-        storeEmployeesInfo.setUpdateTime(new Date());
-        int updateByPrimaryKey = storeEmployeesInfoMapper.updateByPrimaryKey(storeEmployeesInfo);
+        storeEmployeesInfo.setStoreEmployeesId(param.getStoreEmployeesId());
+         storeEmployeesInfo.setUpdateTime(new Date());
+        int updateByPrimaryKey = storeEmployeesInfoMapper.updateByPrimaryKeySelective(storeEmployeesInfo);
         return publicRdfaDate(updateByPrimaryKey);
     }
 
@@ -137,6 +139,7 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
      */
     @Override
     public RdfaData updateStoreEmployeesInfoDeleteFlag(UpdateStoreEmployeesInfoParam param) {
+        param.setDeleteFlag(DeleteFlagEnums.已删除.getCode());
         Integer integer = storeEmployeesInfoMapperExt.updateStoreEmployeesInfoDeleteFlag(param);
         return publicRdfaDate(integer);
     }

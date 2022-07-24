@@ -27,9 +27,24 @@ public class StoreEmployeesInfoParam implements Serializable {
 
     private Integer storeEmployeesPosition;
 
+    /**
+     * 门店id
+     */
 
-    private Long storeId;//门店id
+    private Long storeId;
 
+    /**
+     * 员工id
+     */
+    private Long storeEmployeesId;
+
+    public Long getStoreEmployeesId() {
+        return storeEmployeesId;
+    }
+
+    public void setStoreEmployeesId(Long storeEmployeesId) {
+        this.storeEmployeesId = storeEmployeesId;
+    }
 
     public String getStoreEmployeesName() {
         return storeEmployeesName;

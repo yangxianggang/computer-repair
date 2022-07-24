@@ -5,6 +5,10 @@ import java.io.Serializable;
 public class StoreInfoParam implements Serializable {
 
     /**
+     * 门店id
+     */
+     private Long storeId;
+    /**
      * 门店座机
      */
     private String storeLandline;
@@ -69,5 +73,13 @@ public class StoreInfoParam implements Serializable {
 
     public void setAttributionProvinces(String attributionProvinces) {
         this.attributionProvinces = attributionProvinces;
+    }
+
+    public Long getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(Long storeId) {
+        this.storeId = storeId;
     }
 }

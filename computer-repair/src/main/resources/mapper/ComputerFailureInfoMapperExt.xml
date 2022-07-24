@@ -83,15 +83,15 @@
         update computer_failure_info
         <set>
             <if test="maintenanceStatus != null and maintenanceStatus!=''">
-                maintenance_status= #{maintenanceStatus,jdbcType=TINYINT},
+                maintenance_status= #{maintenanceStatus,jdbcType=TINYINT}
             </if>
             <if test="deleteFlag!=null and deleteFlag!=''">
-                delete_flag=#{deleteFlag,jdbcType=TINYINT},
+                delete_flag=#{deleteFlag,jdbcType=TINYINT}
             </if>
         </set>
         where 1=1
         <if test="computerFailureId!=null and computerFailureId !=''">
-            computer_failure_id = #{computerFailureId,jdbcType=BIGINT}
+           and   computer_failure_id = #{computerFailureId,jdbcType=BIGINT}
         </if>
     </update>
 </mapper>

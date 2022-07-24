@@ -77,7 +77,7 @@ public class StoreEmployeesController {
      * 门店员工信息修改
      */
     @PostMapping("/updateStoreEmployeesInfo")
-    public RdfaData updateStoreEmployeesInfo(StoreEmployeesInfoParam param) {
+    public RdfaData updateStoreEmployeesInfo(@RequestBody StoreEmployeesInfoParam param) {
         return storeEmployeesService.updateStoreEmployeesInfo(param);
     }
 
@@ -88,7 +88,7 @@ public class StoreEmployeesController {
      * @return
      */
     @PostMapping("/updateStoreEmployeesInfoDeleteFlag")
-    public RdfaData updateStoreEmployeesInfoDeleteFlag(UpdateStoreEmployeesInfoParam param) {
+    public RdfaData updateStoreEmployeesInfoDeleteFlag( @RequestBody UpdateStoreEmployeesInfoParam param) {
         return storeEmployeesService.updateStoreEmployeesInfoDeleteFlag(param);
     }
 }

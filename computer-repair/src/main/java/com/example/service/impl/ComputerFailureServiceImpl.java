@@ -12,8 +12,10 @@ import com.example.service.ComputerFailureService;
 import com.example.util.GetSnowIdUtil;
 import com.example.util.RdfaData;
 import com.example.util.convert.ComputerConvert;
+import com.example.util.enums.ComputerUserFaultyStatusEnums;
 import com.example.util.enums.DeleteFlagEnums;
 import com.example.util.enums.ExceptionEnums;
+import com.example.util.enums.MaintenanceStatusEnums;
 import com.weicoder.common.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,6 +51,7 @@ public class ComputerFailureServiceImpl  implements ComputerFailureService {
         userInfo.setComputerUserId(GetSnowIdUtil.getId());
         userInfo.setCreateTime(new Date());
         userInfo.setUpdateTime(new Date());
+        userInfo.setComputerUserFaultyStatus(ComputerUserFaultyStatusEnums.已登记.getCode());
         userInfo.setDeleteFlag(DeleteFlagEnums.未删除.getCode());
         computerUserInfoMapper.insertSelective(userInfo);
         //保存电脑故障信息
@@ -59,6 +62,7 @@ public class ComputerFailureServiceImpl  implements ComputerFailureService {
         failureInfo.setComputerUserName(userInfo.getComputerUserName());//用户姓名
         failureInfo.setCreateTime(new Date());
         failureInfo.setUpdateTime(new Date());
+        failureInfo.setMaintenanceStatus(MaintenanceStatusEnums.排队中.getCode());
         failureInfo.setDeleteFlag(DeleteFlagEnums.未删除.getCode());
         computerFailureInfoMapper.insertSelective(failureInfo);
         rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue());
