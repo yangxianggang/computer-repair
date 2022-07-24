@@ -1,21 +1,30 @@
 package com.example.util;
 
-public class RdfaData<T> {
+public class RdfaData {
     private String code;
     private String message;
-    private T Data;
+    private Object Data;
 
     public RdfaData() {
     }
 
-    public RdfaData(T data) {
-        Data = data;
-    }
 
-    public void success(String code, String message, T data) {
+    public void success(String code, String message,  Object data) {
         this.code = code;
         this.message = message;
         this.Data = data;
+    }
+
+    public void success(String code, String message) {
+        this.code = code;
+        this.message = message;
+
+    }
+
+    public void failed(String code, String message) {
+        this.code = code;
+        this.message = message;
+
     }
 
     public String getCode() {
@@ -34,11 +43,11 @@ public class RdfaData<T> {
         this.message = message;
     }
 
-    public T getData() {
+    public Object getData() {
         return Data;
     }
 
-    public void setData(T data) {
+    public void setData(Object data) {
         Data = data;
     }
 }

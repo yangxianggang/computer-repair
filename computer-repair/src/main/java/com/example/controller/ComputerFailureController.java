@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.param.ComputerFailureParam;
 import com.example.param.SaveComputerFailureParam;
+import com.example.param.UpdateComputerFailureInfoParam;
 import com.example.pojo.ComputerFailureInfo;
 import com.example.pojo.ComputerFailureInfoExample;
 import com.example.service.ComputerFailureService;
@@ -43,18 +44,27 @@ public class ComputerFailureController {
         return  rdfaData;
     }
 
-
-
-
-
     /**
      * 电脑故障状态修改
      */
+
+   @PostMapping("/updateComputerFailureInfoMaintenanceStatus")
+    public RdfaData updateComputerFailureInfoMaintenanceStatus(@RequestBody UpdateComputerFailureInfoParam param){
+       RdfaData rdfaData = computerFailureService.updateComputerFailureInfoMaintenanceStatus(param);
+       return  rdfaData;
+   }
 
 
     /**
      * 电脑故障信息删除
      */
+
+    @PostMapping("/updateComputerFailureInfoDeleteFlag")
+    public RdfaData updateComputerFailureInfoDeleteFlag(@RequestBody UpdateComputerFailureInfoParam param){
+        RdfaData rdfaData = computerFailureService.updateComputerFailureInfoDeleteFlag(param);
+        return  rdfaData;
+    }
+
 
 
     /**

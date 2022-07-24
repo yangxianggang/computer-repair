@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.param.ComputerFailureParam;
 import com.example.param.SaveComputerFailureParam;
+import com.example.param.UpdateComputerFailureInfoParam;
 import com.example.pojo.ComputerFailureInfo;
 import com.example.pojo.ComputerFailureInfoExample;
 import com.example.pojo.StoreEmployeesInfo;
@@ -45,9 +46,15 @@ public interface ComputerFailureService {
      * 电脑故障状态修改
      */
 
+    RdfaData updateComputerFailureInfoMaintenanceStatus(UpdateComputerFailureInfoParam param);
+
     /**
      * 电脑故障信息删除
      */
+
+
+    RdfaData updateComputerFailureInfoDeleteFlag(UpdateComputerFailureInfoParam param);
+
 
     /**
      *

@@ -23,7 +23,7 @@
     <result column="maintenance_engineer_contact" jdbcType="VARCHAR" property="maintenanceEngineerContact" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="create_by_user_id" jdbcType="BIGINT" property="createByUserId" />
-    <result column="upate_time" jdbcType="TIMESTAMP" property="upateTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="update_by_user_id" jdbcType="BIGINT" property="updateByUserId" />
     <result column="delete_flag" jdbcType="TINYINT" property="deleteFlag" />
   </resultMap>
@@ -101,7 +101,7 @@
     computer_failure_id, computer_user_id, computer_user_name, store_id, brand_models, 
     serve_serial, quick_service_code, failure_information, failure_information_detailed, 
     warranty_flag, failure_status, maintenance_status, maintenance_engineer_id, maintenance_engineer_name, 
-    maintenance_engineer_contact, create_time, create_by_user_id, upate_time, update_by_user_id, 
+    maintenance_engineer_contact, create_time, create_by_user_id, update_time, update_by_user_id, 
     delete_flag
   </sql>
   <select id="selectByExample" parameterType="com.example.pojo.ComputerFailureInfoExample" resultMap="BaseResultMap">
@@ -161,7 +161,7 @@
       failure_information_detailed, warranty_flag, 
       failure_status, maintenance_status, maintenance_engineer_id, 
       maintenance_engineer_name, maintenance_engineer_contact, 
-      create_time, create_by_user_id, upate_time, 
+      create_time, create_by_user_id, update_time, 
       update_by_user_id, delete_flag)
     values (#{computerFailureId,jdbcType=BIGINT}, #{computerUserId,jdbcType=BIGINT}, 
       #{computerUserName,jdbcType=VARCHAR}, #{storeId,jdbcType=BIGINT}, #{brandModels,jdbcType=VARCHAR}, 
@@ -169,7 +169,7 @@
       #{failureInformationDetailed,jdbcType=VARCHAR}, #{warrantyFlag,jdbcType=TINYINT}, 
       #{failureStatus,jdbcType=TINYINT}, #{maintenanceStatus,jdbcType=TINYINT}, #{maintenanceEngineerId,jdbcType=BIGINT}, 
       #{maintenanceEngineerName,jdbcType=VARCHAR}, #{maintenanceEngineerContact,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{createByUserId,jdbcType=BIGINT}, #{upateTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createByUserId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{updateByUserId,jdbcType=BIGINT}, #{deleteFlag,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="com.example.pojo.ComputerFailureInfo">
@@ -230,8 +230,8 @@
       <if test="createByUserId != null">
         create_by_user_id,
       </if>
-      <if test="upateTime != null">
-        upate_time,
+      <if test="updateTime != null">
+        update_time,
       </if>
       <if test="updateByUserId != null">
         update_by_user_id,
@@ -292,8 +292,8 @@
       <if test="createByUserId != null">
         #{createByUserId,jdbcType=BIGINT},
       </if>
-      <if test="upateTime != null">
-        #{upateTime,jdbcType=TIMESTAMP},
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateByUserId != null">
         #{updateByUserId,jdbcType=BIGINT},
@@ -371,8 +371,8 @@
       <if test="record.createByUserId != null">
         create_by_user_id = #{record.createByUserId,jdbcType=BIGINT},
       </if>
-      <if test="record.upateTime != null">
-        upate_time = #{record.upateTime,jdbcType=TIMESTAMP},
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.updateByUserId != null">
         update_by_user_id = #{record.updateByUserId,jdbcType=BIGINT},
@@ -408,7 +408,7 @@
       maintenance_engineer_contact = #{record.maintenanceEngineerContact,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       create_by_user_id = #{record.createByUserId,jdbcType=BIGINT},
-      upate_time = #{record.upateTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       update_by_user_id = #{record.updateByUserId,jdbcType=BIGINT},
       delete_flag = #{record.deleteFlag,jdbcType=TINYINT}
     <if test="_parameter != null">
@@ -470,8 +470,8 @@
       <if test="createByUserId != null">
         create_by_user_id = #{createByUserId,jdbcType=BIGINT},
       </if>
-      <if test="upateTime != null">
-        upate_time = #{upateTime,jdbcType=TIMESTAMP},
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateByUserId != null">
         update_by_user_id = #{updateByUserId,jdbcType=BIGINT},
@@ -504,7 +504,7 @@
       maintenance_engineer_contact = #{maintenanceEngineerContact,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       create_by_user_id = #{createByUserId,jdbcType=BIGINT},
-      upate_time = #{upateTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
       update_by_user_id = #{updateByUserId,jdbcType=BIGINT},
       delete_flag = #{deleteFlag,jdbcType=TINYINT}
     where computer_failure_id = #{computerFailureId,jdbcType=BIGINT}

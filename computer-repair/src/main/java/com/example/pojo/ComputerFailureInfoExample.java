@@ -1295,63 +1295,63 @@ public class ComputerFailureInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeIsNull() {
-            addCriterion("upate_time is null");
+        public Criteria andUpdateTimeIsNull() {
+            addCriterion("update_time is null");
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeIsNotNull() {
-            addCriterion("upate_time is not null");
+        public Criteria andUpdateTimeIsNotNull() {
+            addCriterion("update_time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeEqualTo(Date value) {
-            addCriterion("upate_time =", value, "upateTime");
+        public Criteria andUpdateTimeEqualTo(Date value) {
+            addCriterion("update_time =", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeNotEqualTo(Date value) {
-            addCriterion("upate_time <>", value, "upateTime");
+        public Criteria andUpdateTimeNotEqualTo(Date value) {
+            addCriterion("update_time <>", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeGreaterThan(Date value) {
-            addCriterion("upate_time >", value, "upateTime");
+        public Criteria andUpdateTimeGreaterThan(Date value) {
+            addCriterion("update_time >", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("upate_time >=", value, "upateTime");
+        public Criteria andUpdateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("update_time >=", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeLessThan(Date value) {
-            addCriterion("upate_time <", value, "upateTime");
+        public Criteria andUpdateTimeLessThan(Date value) {
+            addCriterion("update_time <", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeLessThanOrEqualTo(Date value) {
-            addCriterion("upate_time <=", value, "upateTime");
+        public Criteria andUpdateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("update_time <=", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeIn(List<Date> values) {
-            addCriterion("upate_time in", values, "upateTime");
+        public Criteria andUpdateTimeIn(List<Date> values) {
+            addCriterion("update_time in", values, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeNotIn(List<Date> values) {
-            addCriterion("upate_time not in", values, "upateTime");
+        public Criteria andUpdateTimeNotIn(List<Date> values) {
+            addCriterion("update_time not in", values, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeBetween(Date value1, Date value2) {
-            addCriterion("upate_time between", value1, value2, "upateTime");
+        public Criteria andUpdateTimeBetween(Date value1, Date value2) {
+            addCriterion("update_time between", value1, value2, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpateTimeNotBetween(Date value1, Date value2) {
-            addCriterion("upate_time not between", value1, value2, "upateTime");
+        public Criteria andUpdateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("update_time not between", value1, value2, "updateTime");
             return (Criteria) this;
         }
 

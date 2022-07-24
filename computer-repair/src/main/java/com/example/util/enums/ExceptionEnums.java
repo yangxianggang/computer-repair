@@ -6,6 +6,7 @@ package com.example.util.enums;
 public enum ExceptionEnums {
     成功("0","处理成功"),
     失败("-1","处理失败"),
+    无更新("-2","无更新"),
     ;
 
     private String key;

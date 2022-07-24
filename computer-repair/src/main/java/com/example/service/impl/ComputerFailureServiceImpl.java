@@ -5,12 +5,14 @@ import com.example.dao.ComputerFailureInfoMapperExt;
 import com.example.dao.ComputerUserInfoMapper;
 import com.example.param.ComputerFailureParam;
 import com.example.param.SaveComputerFailureParam;
+import com.example.param.UpdateComputerFailureInfoParam;
 import com.example.pojo.ComputerFailureInfo;
 import com.example.pojo.ComputerUserInfo;
 import com.example.service.ComputerFailureService;
 import com.example.util.GetSnowIdUtil;
 import com.example.util.RdfaData;
 import com.example.util.convert.ComputerConvert;
+import com.example.util.enums.DeleteFlagEnums;
 import com.example.util.enums.ExceptionEnums;
 import com.weicoder.common.C;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +54,7 @@ public class ComputerFailureServiceImpl  implements ComputerFailureService {
         userInfo.setComputerUserId(GetSnowIdUtil.getId());
         userInfo.setCreateTime(new Date());
         userInfo.setUpdateTime(new Date());
+        userInfo.setDeleteFlag(DeleteFlagEnums.未删除.getCode());
         computerUserInfoMapper.insertSelective(userInfo);
         //保存电脑故障信息
         // TODO: 2022-7-23 类转换异常
@@ -69,11 +72,12 @@ public class ComputerFailureServiceImpl  implements ComputerFailureService {
         failureInfo.setComputerUserId(userInfo.getComputerUserId());//电脑用户id
         failureInfo.setComputerUserName(userInfo.getComputerUserName());//用户姓名
         failureInfo.setCreateTime(new Date());
-        failureInfo.setUpateTime(new Date());
+        failureInfo.setUpdateTime(new Date());
+        failureInfo.setDeleteFlag(DeleteFlagEnums.未删除.getCode());
         computerFailureInfoMapper.insertSelective(failureInfo);
-       //  return rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(),"112");
-        return  null;
-    }
+        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue());
+       return rdfaData;
+     }
 
 
     /**
@@ -85,5 +89,42 @@ public class ComputerFailureServiceImpl  implements ComputerFailureService {
         List<ComputerFailureInfo> failureInfos = computerFailureInfoMapperExt.queryAllPageComputerFailure(param);
          rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(), failureInfos);
         return   rdfaData;
+    }
+
+
+    /**
+     * 电脑故障状态修改
+     */
+    @Override
+    public RdfaData updateComputerFailureInfoMaintenanceStatus(UpdateComputerFailureInfoParam param) {
+        RdfaData rdfaData = updateComputerFailureInfo(param);
+        return rdfaData;
+    }
+
+    /**
+     * 电脑故障信息删除
+     */
+
+    @Override
+    public RdfaData updateComputerFailureInfoDeleteFlag(UpdateComputerFailureInfoParam param) {
+        RdfaData rdfaData = updateComputerFailureInfo(param);
+        return rdfaData;
+    }
+
+    /**
+     * 更新公共方法抽取
+     * @param param
+     * @return
+     */
+
+    public RdfaData updateComputerFailureInfo(UpdateComputerFailureInfoParam param){
+        RdfaData rdfaData=new RdfaData();
+        Integer integer = computerFailureInfoMapperExt.updateComputerFailureInfo(param);
+        if (integer>0){
+            rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue());
+        }else {
+            rdfaData.failed(ExceptionEnums.无更新.getKey(), ExceptionEnums.无更新.getValue());
+        }
+        return rdfaData;
     }
 }
