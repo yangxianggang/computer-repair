@@ -13,10 +13,7 @@ import com.example.service.ComputerFailureService;
 import com.example.util.GetSnowIdUtil;
 import com.example.util.RdfaData;
 import com.example.util.convert.ComputerConvert;
-import com.example.util.enums.ComputerUserFaultyStatusEnums;
-import com.example.util.enums.DeleteFlagEnums;
-import com.example.util.enums.ExceptionEnums;
-import com.example.util.enums.MaintenanceStatusEnums;
+import com.example.util.enums.*;
 import com.weicoder.common.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,8 +24,8 @@ import java.util.List;
 
 
 @Service
-public class ComputerFailureServiceImpl  implements ComputerFailureService {
-     @Autowired
+public class ComputerFailureServiceImpl implements ComputerFailureService {
+    @Autowired
     private ComputerFailureInfoMapper computerFailureInfoMapper;
 
     //电脑故障xml扩展
@@ -41,12 +38,12 @@ public class ComputerFailureServiceImpl  implements ComputerFailureService {
 
     /**
      * 电脑故障登记
-     *  1.记录客户信息
-     *  2.记录故障信息
+     * 1.记录客户信息
+     * 2.记录故障信息
      */
     @Override
-    public RdfaData saveComputerFailure( SaveComputerFailureParam saveComputerFailureParam) {
-        RdfaData rdfaData=new RdfaData();
+    public RdfaData saveComputerFailure(SaveComputerFailureParam saveComputerFailureParam) {
+        RdfaData rdfaData = new RdfaData();
         //保存客户信息
         // TODO: 2022-7-23  pom 文件
         ComputerUserInfo userInfo = ComputerConvert.INSTANCE.computerUserInfoParamToInfoVo(saveComputerFailureParam);
@@ -68,28 +65,29 @@ public class ComputerFailureServiceImpl  implements ComputerFailureService {
         failureInfo.setDeleteFlag(DeleteFlagEnums.未删除.getCode());
         computerFailureInfoMapper.insertSelective(failureInfo);
         rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue());
-       return rdfaData;
-     }
+        return rdfaData;
+    }
 
 
     /**
      * 电脑故障列表
      */
     @Override
-    public RdfaData queryAllPageComputerFailure(ComputerFailureParam param){
-        RdfaData rdfaData=new RdfaData();
+    public RdfaData queryAllPageComputerFailure(ComputerFailureParam param) {
+        RdfaData rdfaData = new RdfaData();
         List<ComputerFailureInfo> failureInfos = computerFailureInfoMapperExt.queryAllPageComputerFailure(param);
         List<ComputerFailureInfoVo> infoVos = ComputerConvert.INSTANCE.computerFailureListConvert(failureInfos);
-//        if (!CollectionUtils.isEmpty(infoVos)){
-//            for (ComputerFailureInfoVo vo : infoVos) {
-//                vo.setFailureStatusName(ComputerUserFaultyStatusEnums.findEnumByCode(vo.getFailureStatus()).getValue());
-//                vo.setWarrantyFlagName(MaintenanceStatusEnums.);
-//            }
-//        }
+        if (!CollectionUtils.isEmpty(infoVos)) {
+            for (ComputerFailureInfoVo vo : infoVos) {
+                vo.setFailureStatusName(FailureStatusEnums.findEnumByCode(vo.getFailureStatus()).getValue());
+                vo.setMaintenanceEngineerName(MaintenanceStatusEnums.findEnumByCode(vo.getMaintenanceStatus()).getValue());
+                vo.setWarrantyFlagName(vo.getWarrantyFlag() == 0 ? "否" : "是");
+            }
+        }
 
 
-        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(), failureInfos);
-        return   rdfaData;
+        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(), infoVos);
+        return rdfaData;
     }
 
 
@@ -114,16 +112,17 @@ public class ComputerFailureServiceImpl  implements ComputerFailureService {
 
     /**
      * 更新公共方法抽取
+     *
      * @param param
      * @return
      */
 
-    public RdfaData updateComputerFailureInfo(UpdateComputerFailureInfoParam param){
-        RdfaData rdfaData=new RdfaData();
+    public RdfaData updateComputerFailureInfo(UpdateComputerFailureInfoParam param) {
+        RdfaData rdfaData = new RdfaData();
         Integer integer = computerFailureInfoMapperExt.updateComputerFailureInfo(param);
-        if (integer>0){
+        if (integer > 0) {
             rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue());
-        }else {
+        } else {
             rdfaData.failed(ExceptionEnums.无更新.getKey(), ExceptionEnums.无更新.getValue());
         }
         return rdfaData;
