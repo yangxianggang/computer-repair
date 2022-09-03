@@ -14,6 +14,24 @@ public enum ComputerUserFaultyStatusEnums {
         this.value = value;
     }
 
+
+
+    /**
+     * 根据code查找
+     * @param code 枚举code
+     * @return 枚举对象
+     */
+    public static ComputerUserFaultyStatusEnums findEnumByCode(Integer code) {
+        for (ComputerUserFaultyStatusEnums statusEnum : ComputerUserFaultyStatusEnums.values()) {
+            if (statusEnum.getCode()==code) {
+                //如果需要直接返回name则更改返回类型为String,return statusEnum.name;
+                return statusEnum;
+            }
+        }
+        throw new IllegalArgumentException("code is invalid");
+    }
+
+
     private Integer code;
     private String  value;
 

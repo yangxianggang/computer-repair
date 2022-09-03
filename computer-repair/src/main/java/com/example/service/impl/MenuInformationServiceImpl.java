@@ -42,6 +42,7 @@ public class MenuInformationServiceImpl implements MenuInformationService {
             menuVos.add(vo);
 
         }
+
         rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(),menuBeans);
         return menuVos;
     }

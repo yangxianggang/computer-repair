@@ -7,6 +7,7 @@ import com.example.param.ComputerFailureParam;
 import com.example.param.SaveComputerFailureParam;
 import com.example.param.UpdateComputerFailureInfoParam;
 import com.example.pojo.ComputerFailureInfo;
+import com.example.pojo.ComputerFailureInfoVo;
 import com.example.pojo.ComputerUserInfo;
 import com.example.service.ComputerFailureService;
 import com.example.util.GetSnowIdUtil;
@@ -19,6 +20,7 @@ import com.example.util.enums.MaintenanceStatusEnums;
 import com.weicoder.common.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.Date;
 import java.util.List;
@@ -77,7 +79,16 @@ public class ComputerFailureServiceImpl  implements ComputerFailureService {
     public RdfaData queryAllPageComputerFailure(ComputerFailureParam param){
         RdfaData rdfaData=new RdfaData();
         List<ComputerFailureInfo> failureInfos = computerFailureInfoMapperExt.queryAllPageComputerFailure(param);
-         rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(), failureInfos);
+        List<ComputerFailureInfoVo> infoVos = ComputerConvert.INSTANCE.computerFailureListConvert(failureInfos);
+//        if (!CollectionUtils.isEmpty(infoVos)){
+//            for (ComputerFailureInfoVo vo : infoVos) {
+//                vo.setFailureStatusName(ComputerUserFaultyStatusEnums.findEnumByCode(vo.getFailureStatus()).getValue());
+//                vo.setWarrantyFlagName(MaintenanceStatusEnums.);
+//            }
+//        }
+
+
+        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(), failureInfos);
         return   rdfaData;
     }
 

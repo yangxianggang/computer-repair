@@ -18,6 +18,59 @@ public class UpdateComputerFailureInfoParam implements Serializable {
      */
     private Integer  deleteFlag;
 
+
+    /**
+     * 电脑客户姓名
+     */
+    private String computerUserName;
+
+    /**
+     * 电脑品牌型号
+     */
+    private String brandModels;
+
+    /**
+     * 是否在保修期内（0 否 1是）
+     */
+    private Integer warrantyFlag;
+
+    /**
+     * 故障状态 （1 一般 2 困难 3 严重 4 大修）
+     */
+    private Integer failureStatus;
+
+    public String getComputerUserName() {
+        return computerUserName;
+    }
+
+    public void setComputerUserName(String computerUserName) {
+        this.computerUserName = computerUserName;
+    }
+
+    public String getBrandModels() {
+        return brandModels;
+    }
+
+    public void setBrandModels(String brandModels) {
+        this.brandModels = brandModels;
+    }
+
+    public Integer getWarrantyFlag() {
+        return warrantyFlag;
+    }
+
+    public void setWarrantyFlag(Integer warrantyFlag) {
+        this.warrantyFlag = warrantyFlag;
+    }
+
+    public Integer getFailureStatus() {
+        return failureStatus;
+    }
+
+    public void setFailureStatus(Integer failureStatus) {
+        this.failureStatus = failureStatus;
+    }
+
     public Integer getDeleteFlag() {
         return deleteFlag;
     }

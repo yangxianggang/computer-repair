@@ -30,7 +30,7 @@
     -->
     select
     <include refid="Base_Column_List" />
-    from menu_information
+    from menu_information where enable_start=1
 
   </select>
 

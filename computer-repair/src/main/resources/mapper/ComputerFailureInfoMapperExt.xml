@@ -57,10 +57,7 @@
             </if>
             <if test="quickServiceCode!=null and quickServiceCode!=''">
                 and qck_service_code= #{quickServiceCode,jdbcType=VARCHAR}
-
             </if>
-
-
             <if test="computerUserName!=null and computerUserName!=''">
                 and computer_user_name= #{computerUserName,jdbcType=VARCHAR}
             </if>
@@ -83,10 +80,22 @@
         update computer_failure_info
         <set>
             <if test="maintenanceStatus != null and maintenanceStatus!=''">
-                maintenance_status= #{maintenanceStatus,jdbcType=TINYINT}
+                maintenance_status= #{maintenanceStatus,jdbcType=TINYINT},
+            </if>
+            <if test="computerUserName!=null and computerUserName!=''">
+                computer_user_name=#{computerUserName,jdbcType=VARCHAR},
+            </if>
+            <if test="brandModels!=null and brandModels!=''">
+                brand_models=#{brandModels,jdbcType=VARCHAR},
+            </if>
+            <if test="warrantyFlag!=null and warrantyFlag!=''">
+                warranty_flag=#{warrantyFlag,jdbcType=TINYINT},
+            </if>
+            <if test="failureStatus!=null and failureStatus !=''">
+                failure_status=#{failureStatus,jdbcType=TINYINT},
             </if>
             <if test="deleteFlag!=null and deleteFlag!=''">
-                delete_flag=#{deleteFlag,jdbcType=TINYINT}
+                delete_flag=#{deleteFlag,jdbcType=TINYINT},
             </if>
         </set>
         where 1=1
