@@ -1,11 +1,14 @@
 package com.example.pojo;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+
 import java.io.Serializable;
 import java.util.Date;
 
 public class ComputerFailureInfoVo implements Serializable {
 
-
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long computerFailureId;
 
 

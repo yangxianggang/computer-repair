@@ -45,8 +45,7 @@ public class ComputerFailureServiceImpl implements ComputerFailureService {
     public RdfaData saveComputerFailure(SaveComputerFailureParam saveComputerFailureParam) {
         RdfaData rdfaData = new RdfaData();
         //保存客户信息
-        // TODO: 2022-7-23  pom 文件
-        ComputerUserInfo userInfo = ComputerConvert.INSTANCE.computerUserInfoParamToInfoVo(saveComputerFailureParam);
+         ComputerUserInfo userInfo = ComputerConvert.INSTANCE.computerUserInfoParamToInfoVo(saveComputerFailureParam);
         userInfo.setComputerUserId(GetSnowIdUtil.getId());
         userInfo.setCreateTime(new Date());
         userInfo.setUpdateTime(new Date());
@@ -54,8 +53,7 @@ public class ComputerFailureServiceImpl implements ComputerFailureService {
         userInfo.setDeleteFlag(DeleteFlagEnums.未删除.getCode());
         computerUserInfoMapper.insertSelective(userInfo);
         //保存电脑故障信息
-        // TODO: 2022-7-23 类转换异常
-        ComputerFailureInfo failureInfo = ComputerConvert.INSTANCE.computerFailureParamToInfoVo(saveComputerFailureParam);
+         ComputerFailureInfo failureInfo = ComputerConvert.INSTANCE.computerFailureParamToInfoVo(saveComputerFailureParam);
         failureInfo.setComputerFailureId(GetSnowIdUtil.getId());//业务主键
         failureInfo.setComputerUserId(userInfo.getComputerUserId());//电脑用户id
         failureInfo.setComputerUserName(userInfo.getComputerUserName());//用户姓名

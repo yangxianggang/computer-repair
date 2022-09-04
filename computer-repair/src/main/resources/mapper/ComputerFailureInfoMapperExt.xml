@@ -56,7 +56,7 @@
                 and brand_models= #{brandModels,jdbcType=VARCHAR}
             </if>
             <if test="quickServiceCode!=null and quickServiceCode!=''">
-                and qck_service_code= #{quickServiceCode,jdbcType=VARCHAR}
+                and quick_service_code= #{quickServiceCode,jdbcType=VARCHAR}
             </if>
             <if test="computerUserName!=null and computerUserName!=''">
                 and computer_user_name= #{computerUserName,jdbcType=VARCHAR}
@@ -81,6 +81,10 @@
         <set>
             <if test="maintenanceStatus != null and maintenanceStatus!=''">
                 maintenance_status= #{maintenanceStatus,jdbcType=TINYINT},
+            </if>
+            <if test="quickServiceCode!=null and quickServiceCode!=''">
+                 quick_service_code= #{quickServiceCode,jdbcType=VARCHAR},
+
             </if>
             <if test="computerUserName!=null and computerUserName!=''">
                 computer_user_name=#{computerUserName,jdbcType=VARCHAR},

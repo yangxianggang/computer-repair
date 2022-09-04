@@ -9,15 +9,19 @@ import com.example.param.StoreInfoParam;
 import com.example.param.UpdateStoreEmployeesInfoParam;
 import com.example.param.UpdateStoreInfoParam;
 import com.example.pojo.StoreEmployeesInfo;
+import com.example.pojo.StoreEmployeesInfoVo;
 import com.example.pojo.StoreInfo;
+import com.example.pojo.StoreInfoVo;
 import com.example.service.StoreEmployeesService;
 import com.example.util.GetSnowIdUtil;
 import com.example.util.RdfaData;
 import com.example.util.convert.StoreEmployeesConvert;
 import com.example.util.enums.DeleteFlagEnums;
 import com.example.util.enums.ExceptionEnums;
+import com.example.util.enums.StoreEmployeesPositionEnums;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.Date;
 import java.util.List;
@@ -43,7 +47,17 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
     public RdfaData queryAllPageStoreInfo(StoreInfoParam param) {
         RdfaData rdfaData = new RdfaData();
         List<StoreInfo> storeInfos = storeInfoMapperExt.queryAllPageStoreInfo(param);
-        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(), storeInfos);
+        List<StoreInfoVo> infoVos = StoreEmployeesConvert.INSTANCE.storeInfoListConvert(storeInfos);
+        if (!CollectionUtils.isEmpty(infoVos)){
+            for (StoreInfoVo infoVo : infoVos) {
+                StoreEmployeesInfoParam storeEmployeesInfoParam=new StoreEmployeesInfoParam();
+                storeEmployeesInfoParam.setStoreId(infoVo.getStoreId());
+                List<StoreEmployeesInfo> storeEmployeesInfos = storeEmployeesInfoMapperExt.queryAllStoreEmployeesInfo(storeEmployeesInfoParam);
+                infoVo.setStoreEmployeesInfoCount(storeEmployeesInfos.size());
+            }
+        }
+
+        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(), infoVos);
         return rdfaData;
     }
 
@@ -115,7 +129,16 @@ public class StoreEmployeesServiceImpl implements StoreEmployeesService {
     public RdfaData queryAllStoreEmployeesInfo(StoreEmployeesInfoParam param) {
         RdfaData rdfaData = new RdfaData();
         List<StoreEmployeesInfo> storeEmployeesInfos = storeEmployeesInfoMapperExt.queryAllStoreEmployeesInfo(param);
-        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(), storeEmployeesInfos);
+
+        List<StoreEmployeesInfoVo> employeesInfoVos = StoreEmployeesConvert.INSTANCE.employeesInfoConvert(storeEmployeesInfos);
+        if (!CollectionUtils.isEmpty(employeesInfoVos)){
+            for (StoreEmployeesInfoVo infoVo : employeesInfoVos) {
+                infoVo.setStoreEmployeesPositionName(StoreEmployeesPositionEnums.findEnumByCode(infoVo.getStoreEmployeesPosition()).getValue());
+            }
+        }
+
+
+        rdfaData.success(ExceptionEnums.成功.getKey(), ExceptionEnums.成功.getValue(), employeesInfoVos);
         return rdfaData;
     }
 

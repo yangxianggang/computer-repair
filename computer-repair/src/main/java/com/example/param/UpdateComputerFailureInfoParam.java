@@ -39,6 +39,19 @@ public class UpdateComputerFailureInfoParam implements Serializable {
      */
     private Integer failureStatus;
 
+    /**
+     * 快速服务代码
+     */
+    private String quickServiceCode;
+
+    public String getQuickServiceCode() {
+        return quickServiceCode;
+    }
+
+    public void setQuickServiceCode(String quickServiceCode) {
+        this.quickServiceCode = quickServiceCode;
+    }
+
     public String getComputerUserName() {
         return computerUserName;
     }
