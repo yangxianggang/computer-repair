@@ -5,7 +5,7 @@ import com.example.pojo.ComputerFailureInfo;
 import com.example.pojo.ComputerFailureInfoVo;
 import com.example.pojo.ComputerUserInfo;
 
-import org.mapstruct.Mapper;
+ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
