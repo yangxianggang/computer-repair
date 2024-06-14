@@ -173,9 +173,7 @@
       <if test="computerUserAddress != null">
         computer_user_address,
       </if>
-      <if test="computerUserFaultyStatus != null">
-        computer_user_faulty_status,
-      </if>
+
       <if test="createTime != null">
         create_time,
       </if>
@@ -205,9 +203,7 @@
       <if test="computerUserAddress != null">
         #{computerUserAddress,jdbcType=VARCHAR},
       </if>
-      <if test="computerUserFaultyStatus != null">
-        #{computerUserFaultyStatus,jdbcType=TINYINT},
-      </if>
+
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
