@@ -63,7 +63,7 @@
                 and cfi.quick_service_code= #{quickServiceCode,jdbcType=VARCHAR}
             </if>
             <if test="computerUserName!=null and computerUserName!=''">
-                and cfi.computer_user_name= #{computerUserName,jdbcType=VARCHAR}
+                and cui.computer_user_name= #{computerUserName,jdbcType=VARCHAR}
             </if>
             <if test="warrantyFlag!=null and warrantyFlag!=''">
                 and cfi.warranty_flag= #{warrantyFlag,jdbcType=TINYINT}
